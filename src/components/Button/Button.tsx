@@ -1,11 +1,12 @@
-import React from 'react'
-import { StyledButton } from './styled'
+import React from 'react';
+import { StyledButton } from './styled';
 
 export interface IProps {
-  label: string
+  label: string;
+  color: 'secondary' | 'main';
 }
-const Button = ({ label }: IProps) => {
-  return <StyledButton>{label}</StyledButton>
+function Button({ label, color }: IProps) {
+  return <StyledButton color={color}>{label}</StyledButton>;
 }
 
-export default Button
+export default Button;

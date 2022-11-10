@@ -1,0 +1,12 @@
+.git
+.vscode
+node_modules
+dist
+stories
+
+main.js
+preview.js
+rollup.config.mjs
+
+rollup.config.js
+!.storybook

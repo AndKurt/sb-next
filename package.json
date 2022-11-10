@@ -1,10 +1,9 @@
 {
   "name": "@andkurt/themeforest",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Components library for themeforest task",
   "author": "Andrey Kurt",
   "private": false,
-  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -24,7 +23,9 @@
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "eslintConfig": {
     "extends": [
@@ -71,6 +72,9 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-storybook": "^0.6.7",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "prop-types": "^15.8.1",
