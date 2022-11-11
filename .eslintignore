@@ -7,6 +7,9 @@ stories
 main.js
 preview.js
 rollup.config.mjs
+config.js
+craco.config.js
+declaration.d.ts
 
 rollup.config.js
 !.storybook
