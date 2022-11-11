@@ -1,4 +1,4 @@
-import { ButtonHeight, ButtonWidth } from '../interfaces';
+import { ButtonHeight, ButtonWidth, Direction } from '../interfaces';
 import theme from '../theme';
 
 const { BUTTON_WIDTH, BUTTON_HEIGHT } = theme;
@@ -33,4 +33,11 @@ export const setHeightButtonSize = (size: ButtonHeight = 'auto') => {
     default:
       return 'auto';
   }
+};
+
+export const setDirection = (direction: Direction): string => {
+  if (direction === 'back') {
+    return 'transform: rotate(180deg);';
+  }
+  return '';
 };

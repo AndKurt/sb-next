@@ -197,8 +197,8 @@ const HEIGHT = {
 const BUTTON_WIDTH = {
   buttonXS: '41px',
   buttonS: '110px',
-  buttonM: '168px',
-  buttonL: '145px',
+  buttonM: '145px',
+  buttonL: '168px',
   buttonXL: '190px',
   buttonXXL: '210px',
   buttonRoundSmall: '89px',
@@ -224,8 +224,10 @@ const DEVICE = {
 };
 
 const RADIUS = {
+  none: 'none',
   S: '6px',
-  M: '20px',
+  M: '14px',
+  L: '20px',
   FULL: '50%',
 };
 
@@ -245,9 +247,13 @@ const SPACES = {
 };
 
 const SVG_SIZE = {
-  S: css`
+  XS: css`
     height: 24px;
     width: 24px;
+  `,
+  S: css`
+    height: 30px;
+    width: 30px;
   `,
   M: css`
     height: 32px;
@@ -261,6 +267,18 @@ const SVG_SIZE = {
     height: 80px;
     width: 80px;
   `,
+};
+
+const SVG_COLORS = {
+  PRIMARY:
+    'filter: brightness(0) saturate(100%) invert(42%) sepia(70%) saturate(7477%) hue-rotate(220deg) brightness(100%) contrast(102%);',
+  WHITE:
+    'filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(143deg) brightness(104%) contrast(104%);',
+  BLACK:
+    'filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7500%) hue-rotate(244deg) brightness(80%) contrast(117%);',
+  GREY: 'filter: brightness(0) saturate(100%) invert(58%) sepia(7%) saturate(344%) hue-rotate(189deg) brightness(102%) contrast(92%);',
+  HELPER_BLUE_3:
+    'filter: brightness(0) saturate(100%) invert(91%) sepia(7%) saturate(801%) hue-rotate(178deg) brightness(96%) contrast(91%);',
 };
 
 const TRANSITION = {
@@ -293,4 +311,5 @@ export default {
   // BACKGROUND,
   BUTTON_WIDTH,
   BUTTON_HEIGHT,
+  SVG_COLORS,
 };

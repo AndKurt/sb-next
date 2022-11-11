@@ -17,5 +17,8 @@ export type ButtonHeight = 'XS' | 'S' | 'M' | 'L' | 'auto';
 
 export type BackgroundColor = 'PRIMARY' | 'WHITE' | 'TERTIARY';
 export type TextColor = 'PRIMARY' | 'WHITE' | 'BLACK' | 'GREY';
+export type SVGColor = TextColor | 'HELPER_BLUE_3';
 
-export type Radius = 'S' | 'M';
+export type Radius = 'S' | 'M' | 'L' | 'none';
+
+export type Direction = 'forward' | 'back';

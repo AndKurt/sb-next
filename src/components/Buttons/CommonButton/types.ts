@@ -22,7 +22,7 @@ export interface ICommonButton extends IStyledCommonButton {
   /** Button name */
   label?: string;
   /** Button name */
-  icon?: string;
+  mediaIcon?: 'play' | 'pause';
   /** Action */
   handleClick: () => void;
 }

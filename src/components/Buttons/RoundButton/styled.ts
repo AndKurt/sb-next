@@ -48,7 +48,7 @@ export const StyledRoundButton = styled.button<IStyledRoundButton>`
     z-index: 1;
   }
 
-  :hover {
+  :hover:enabled {
     background: ${COLOR.PRIMARY_HOVER};
     box-shadow: ${BOX_SHADOW.BUTTON};
   }
@@ -59,6 +59,7 @@ export const StyledRoundButton = styled.button<IStyledRoundButton>`
   :disabled {
     background: ${COLOR.GREY};
     box-shadow: none;
+    cursor: not-allowed;
   }
 
   @media ${DEVICE.tablet} {

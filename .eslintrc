@@ -27,6 +27,7 @@
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
     "react/jsx-props-no-spreading": "off",
+    "consistent-return": ["off"],
     "better-styled-components/sort-declarations-alphabetically": 2,
     "max-len": [
       "warn",

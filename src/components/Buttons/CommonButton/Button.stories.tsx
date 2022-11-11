@@ -14,7 +14,7 @@ export default {
 
   argTypes: {
     label: {
-      defaultValue: 'Round Button',
+      defaultValue: 'Simple',
       control: {
         type: 'text',
       },

@@ -14,7 +14,7 @@ export default {
 
   argTypes: {
     label: {
-      defaultValue: 'Round Button',
+      defaultValue: 'Watch the demo',
       control: {
         type: 'text',
       },
@@ -22,6 +22,13 @@ export default {
 
     bgColor: {
       defaultValue: 'PRIMARY',
+    },
+
+    icon: {
+      control: {
+        type: 'file',
+        accept: '.svg',
+      },
     },
 
     textColor: {
@@ -44,7 +51,7 @@ export default {
 
     width: {
       control: 'select',
-      defaultValue: 'auto',
+      defaultValue: 'L',
     },
 
     height: {
@@ -52,13 +59,18 @@ export default {
       defaultValue: 'auto',
     },
 
+    mediaIcon: {
+      control: 'radio',
+      defaultValue: 'play',
+    },
+
     textSize: {
       control: 'select',
-      defaultValue: 'bold_6',
+      defaultValue: 'semibold_7',
     },
 
     padding: {
-      defaultValue: 14,
+      defaultValue: 10,
       control: { type: 'number' },
     },
 

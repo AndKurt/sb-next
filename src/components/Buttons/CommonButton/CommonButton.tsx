@@ -3,9 +3,12 @@ import React from 'react';
 import { StyledCommonButton } from './styled';
 import { ICommonButton } from './types';
 
+import pauseIcon from '../../../assets/svg/buttons/icon_pause_circle.svg';
+import playIcon from '../../../assets/svg/buttons/icon_play_circle.svg';
+
 const CommonButton = ({
   label,
-  icon,
+  mediaIcon,
   bgColor,
   isBorder,
   isDisabled,
@@ -35,7 +38,7 @@ const CommonButton = ({
     padding={padding}
     onClick={handleClick}
   >
-    {icon && <img src={icon} alt="media-button" />}
+    {mediaIcon && <img src={mediaIcon === 'pause' ? pauseIcon : playIcon} alt={mediaIcon} />}
     {label}
   </StyledCommonButton>
 );
