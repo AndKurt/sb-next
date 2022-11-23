@@ -14,6 +14,7 @@ export type TitleSize =
 
 export type ButtonWidth = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'auto';
 export type ButtonHeight = 'XS' | 'S' | 'M' | 'L' | 'auto';
+export type SvgSize = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'auto';
 
 export type BackgroundColor = 'PRIMARY' | 'WHITE' | 'TERTIARY';
 export type TextColor = 'PRIMARY' | 'WHITE' | 'BLACK' | 'GREY';

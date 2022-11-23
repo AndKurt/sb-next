@@ -1,7 +1,7 @@
-import { TitleSize } from '../interfaces';
+import { ParagraphSize, TitleSize } from '../interfaces';
 import theme from '../theme';
 
-const { HEADLINE } = theme;
+const { HEADLINE, PARAGRAPH } = theme;
 
 export const setTitleFontSize = (size: TitleSize) => {
   switch (size) {
@@ -23,5 +23,22 @@ export const setTitleFontSize = (size: TitleSize) => {
       return HEADLINE.MEDIUM_7;
     default:
       return HEADLINE.EXTRABOLD_1;
+  }
+};
+
+export const setParagraphFontSize = (size: ParagraphSize) => {
+  switch (size) {
+    case 'regular_1':
+      return PARAGRAPH.REGULAR_1;
+    case 'regular_2':
+      return PARAGRAPH.REGULAR_2;
+    case 'regular_3':
+      return PARAGRAPH.REGULAR_3;
+    case 'bold_2':
+      return PARAGRAPH.BOLD_2;
+    case 'bold_3':
+      return PARAGRAPH.BOLD_3;
+    default:
+      return PARAGRAPH.REGULAR_1;
   }
 };

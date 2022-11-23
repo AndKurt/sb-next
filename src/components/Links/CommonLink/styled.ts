@@ -8,7 +8,6 @@ import { setTitleFontSize } from '../../../utils';
 const { COLOR, TRANSITION, SVG_COLORS } = theme;
 
 export const StyledCommonLink = styled.a<IStyledCommonLink>`
-  align-self: center;
   ${({ textSize = 'semibold_7' }) => setTitleFontSize(textSize)};
   color: ${COLOR.PRIMARY};
   display: inline-block;
@@ -24,6 +23,7 @@ export const StyledCommonLink = styled.a<IStyledCommonLink>`
     height: 8px;
     margin-left: 5px;
     ${SVG_COLORS.PRIMARY};
+    transition: ${TRANSITION.FAST};
   }
 
   :hover,

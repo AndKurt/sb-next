@@ -16,14 +16,6 @@ const COLOR = {
   RED: '#C14040',
 };
 
-// const BACKGROUND = {
-//  default: COLOR.WHITE,
-//  light: COLOR.BACKGROUND,
-//  dark: COLOR.SECONDARY,
-//  primary: COLOR.PRIMARY,
-//  primaryHover: COLOR.PRIMARY_HOVER,
-// };
-
 const headlineBase = css`
   font-family: 'Manrope';
   font-style: normal;
@@ -310,7 +302,6 @@ export default {
   HEADLINE,
   PARAGRAPH,
   HEIGHT,
-  // BACKGROUND,
   BUTTON_WIDTH,
   BUTTON_HEIGHT,
   SVG_COLORS,
