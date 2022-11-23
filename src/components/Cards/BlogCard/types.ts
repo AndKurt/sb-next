@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface IStyledServiceCard {
+export interface IStyledBlogCard {
   // ** Margin left */
   ml?: number;
   // ** Margin right */
@@ -9,13 +9,12 @@ export interface IStyledServiceCard {
   mt?: number;
   // ** Margin bottom */
   mb?: number;
-  isCentering?: boolean;
-  isLargeCard?: boolean;
 }
 
-export interface IServiceCard extends IStyledServiceCard {
+export interface IBlogCard extends IStyledBlogCard {
   img: string;
+  date: string;
   title: string;
   children: ReactNode;
-  linkHref?: string;
+  linkHref: string;
 }

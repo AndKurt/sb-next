@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface IStyledServiceCard {
+export interface IStyledReviewCard {
   // ** Margin left */
   ml?: number;
   // ** Margin right */
@@ -9,13 +9,11 @@ export interface IStyledServiceCard {
   mt?: number;
   // ** Margin bottom */
   mb?: number;
-  isCentering?: boolean;
-  isLargeCard?: boolean;
 }
 
-export interface IServiceCard extends IStyledServiceCard {
+export interface IReviewCard extends IStyledReviewCard {
   img: string;
-  title: string;
+  name: string;
+  position: string;
   children: ReactNode;
-  linkHref?: string;
 }

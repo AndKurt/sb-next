@@ -5,8 +5,8 @@ import { IServiceCard } from './types';
 
 import CommonLink from '../../Links/CommonLink';
 
-const ServiceCard: React.FC<IServiceCard> = ({ img, title, children, linkHref, linkText, isLargeCard }) => {
-  const isLinkExist = !!(linkHref && linkText);
+const ServiceCard: React.FC<IServiceCard> = ({ img, title, children, linkHref, isLargeCard }) => {
+  const isLinkExist = !!linkHref;
 
   return (
     <StyledServiceCard isCentering={isLargeCard ? false : isLinkExist} isLargeCard={isLargeCard}>
@@ -17,7 +17,7 @@ const ServiceCard: React.FC<IServiceCard> = ({ img, title, children, linkHref, l
       <StyledParagraph>{children}</StyledParagraph>
       {isLinkExist && (
         <CommonLink href={linkHref} withArrow>
-          {linkText}
+          Read more
         </CommonLink>
       )}
     </StyledServiceCard>
