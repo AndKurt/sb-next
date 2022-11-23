@@ -6,6 +6,7 @@ import theme from '../../../theme';
 import { setParagraphFontSize, setRadius, setSvgSize, setTitleFontSize } from '../../../utils';
 
 const { COLOR, BOX_SHADOW, DEVICE } = theme;
+
 export const StyledParagraph = styled.p`
   color: ${COLOR.GREY};
   ${setParagraphFontSize('regular_2')}
