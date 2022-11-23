@@ -6,10 +6,10 @@ import { IStyledCommonButton } from './types';
 import theme from '../../../theme/theme';
 import {
   setBackgroundButton,
-  setDisabledBackgroundButtton,
+  setDisabledBackgroundButton,
   setDisabledColor,
   setHeightButtonSize,
-  setHoverBackgroundButtton,
+  setHoverBackgroundButton,
   setHoverTextColor,
   setRadius,
   setSVGColor,
@@ -49,7 +49,7 @@ export const StyledCommonButton = styled.button<IStyledCommonButton>`
   }
 
   :hover:enabled {
-    background: ${({ bgColor }) => setHoverBackgroundButtton(bgColor !== 'TERTIARY' ? bgColor : 'TERTIARY')};
+    background: ${({ bgColor }) => setHoverBackgroundButton(bgColor !== 'TERTIARY' ? bgColor : 'TERTIARY')};
     border: ${({ isBorder = false, textColor }) => (isBorder ? `1px solid ${setHoverTextColor(textColor)}` : 'none')};
     color: ${({ textColor }) => setHoverTextColor(textColor)};
 
@@ -59,7 +59,7 @@ export const StyledCommonButton = styled.button<IStyledCommonButton>`
   }
 
   :disabled {
-    background: ${({ bgColor }) => setDisabledBackgroundButtton(bgColor)};
+    background: ${({ bgColor }) => setDisabledBackgroundButton(bgColor)};
     border: ${({ isBorder = false, textColor }) => (isBorder ? `1px solid ${setDisabledColor(textColor)}` : 'none')};
     box-shadow: none;
     color: ${({ textColor }) => setDisabledColor(textColor)};

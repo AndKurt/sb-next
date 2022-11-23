@@ -7,7 +7,7 @@ export const setBackgroundButton = (color: BackgroundColor = 'WHITE') => COLOR[c
 
 export const setTextColor = (color: TextColor = 'BLACK') => COLOR[color];
 
-export const setHoverBackgroundButtton = (color: BackgroundColor = 'WHITE') => {
+export const setHoverBackgroundButton = (color: BackgroundColor = 'WHITE') => {
   switch (color) {
     case 'PRIMARY':
       return COLOR.PRIMARY_HOVER;
@@ -31,7 +31,7 @@ export const setHoverTextColor = (color: TextColor = 'WHITE') => {
   }
 };
 
-export const setDisabledBackgroundButtton = (color: BackgroundColor = 'WHITE') => {
+export const setDisabledBackgroundButton = (color: BackgroundColor = 'WHITE') => {
   switch (color) {
     case 'PRIMARY':
       return COLOR.GREY;

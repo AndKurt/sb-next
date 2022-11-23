@@ -279,6 +279,8 @@ const SVG_COLORS = {
   GREY: 'filter: brightness(0) saturate(100%) invert(58%) sepia(7%) saturate(344%) hue-rotate(189deg) brightness(102%) contrast(92%);',
   HELPER_BLUE_3:
     'filter: brightness(0) saturate(100%) invert(91%) sepia(7%) saturate(801%) hue-rotate(178deg) brightness(96%) contrast(91%);',
+  SECONDARY:
+    'filter: brightness(0) saturate(100%) invert(14%) sepia(29%) saturate(2999%) hue-rotate(180deg) brightness(98%) contrast(104%);',
 };
 
 const TRANSITION = {
