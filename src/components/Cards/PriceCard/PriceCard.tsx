@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import {
   CheckMark,
@@ -10,16 +10,48 @@ import {
   StyledPriceCard,
   Title,
 } from './styled';
-import { IPriceCard } from './types';
+import { IBtnColors, IPriceCard, Period } from './types';
 
 import checkMarkImg from '../../../assets/svg/check_mark.svg';
 import CommonButton from '../../Buttons/CommonButton';
 
+const monthBtn: IBtnColors = {
+  bgColor: 'PRIMARY',
+  textColor: 'WHITE',
+};
+
+const yearBtn: IBtnColors = {
+  bgColor: 'WHITE',
+  textColor: 'PRIMARY',
+};
+
 const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList }) => {
   const [isHover, setIsHover] = useState(false);
+  const [monthBtnColor, setMonthBtnColor] = useState<IBtnColors>(monthBtn);
+  const [yearBtnColor, setYearBtnColor] = useState<IBtnColors>(yearBtn);
+  const [period, setPeriod] = useState<Period>('Mo');
 
-  const setPeriod = () => console.log('setPeriod');
-  const handleChoosePlan = () => console.log('ChoosePlan');
+  useEffect(() => {
+    if (isHover) {
+      setMonthBtnColor(yearBtnColor);
+      setYearBtnColor(monthBtnColor);
+    }
+  }, []);
+
+  const toggleBtnColor = useCallback(() => {
+    setMonthBtnColor(yearBtnColor);
+    setYearBtnColor(monthBtnColor);
+  }, [monthBtnColor, yearBtnColor]);
+
+  const handleChooseMonth = () => {
+    setPeriod('Mo');
+    toggleBtnColor();
+  };
+
+  const handleChooseYear = () => {
+    setPeriod('Yr');
+    toggleBtnColor();
+  };
 
   return (
     <StyledPriceCard onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
@@ -32,10 +64,10 @@ const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList }) => {
             isBorder
             width="XS"
             textSize="semibold_7"
-            bgColor={!isHover ? 'PRIMARY' : 'WHITE'}
-            textColor={isHover ? 'PRIMARY' : 'WHITE'}
+            bgColor={monthBtnColor.bgColor}
+            textColor={monthBtnColor.textColor}
             height="XS"
-            handleClick={setPeriod}
+            handleClick={handleChooseMonth}
             radius="S"
           />
           <CommonButton
@@ -43,10 +75,10 @@ const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList }) => {
             isBorder
             width="XS"
             textSize="semibold_7"
-            bgColor={isHover ? 'PRIMARY' : 'WHITE'}
-            textColor={!isHover ? 'PRIMARY' : 'WHITE'}
+            bgColor={yearBtnColor.bgColor}
+            textColor={yearBtnColor.textColor}
             height="XS"
-            handleClick={setPeriod}
+            handleClick={handleChooseYear}
             radius="S"
           />
         </PeriodContainer>
@@ -55,9 +87,9 @@ const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList }) => {
         label="Choose plan"
         width="XXL"
         height="S"
-        bgColor={!isHover ? 'PRIMARY' : 'WHITE'}
+        bgColor={isHover ? 'WHITE' : 'PRIMARY'}
         textColor={isHover ? 'PRIMARY' : 'WHITE'}
-        handleClick={handleChoosePlan}
+        handleClick={() => console.log(period)}
         textSize="semibold_7"
         radius="S"
         mb={30}
