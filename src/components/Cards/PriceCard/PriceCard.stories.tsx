@@ -56,5 +56,7 @@ export default {
       defaultValue: 0,
       control: { type: 'number' },
     },
+
+    handleChosePlan: { defaultValue: 'asds', action: 'onClick' },
   },
 } as ComponentMeta<typeof PriceCard>;

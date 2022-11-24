@@ -25,7 +25,7 @@ const yearBtn: IBtnColors = {
   textColor: 'PRIMARY',
 };
 
-const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList }) => {
+const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList, handleChosePlan }) => {
   const [isHover, setIsHover] = useState(false);
   const [monthBtnColor, setMonthBtnColor] = useState<IBtnColors>(monthBtn);
   const [yearBtnColor, setYearBtnColor] = useState<IBtnColors>(yearBtn);
@@ -89,7 +89,7 @@ const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList }) => {
         height="S"
         bgColor={isHover ? 'WHITE' : 'PRIMARY'}
         textColor={isHover ? 'PRIMARY' : 'WHITE'}
-        handleClick={() => console.log(period)}
+        handleClick={() => handleChosePlan(title, period)}
         textSize="semibold_7"
         radius="S"
         mb={30}
