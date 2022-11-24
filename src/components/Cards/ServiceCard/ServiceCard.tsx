@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { StyledImgContainer, StyledParagraph, StyledServiceCard, StyledTitle } from './styled';
 import { IServiceCard } from './types';
@@ -16,7 +16,7 @@ const ServiceCard: React.FC<IServiceCard> = ({ img, title, children, linkHref, i
       <StyledTitle>{title}</StyledTitle>
       <StyledParagraph>{children}</StyledParagraph>
       {isLinkExist && (
-        <CommonLink href={linkHref} withArrow>
+        <CommonLink isInternalPath to={linkHref} withArrow>
           Read more
         </CommonLink>
       )}
@@ -24,4 +24,4 @@ const ServiceCard: React.FC<IServiceCard> = ({ img, title, children, linkHref, i
   );
 };
 
-export default ServiceCard;
+export default memo(ServiceCard);

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IStyledPriceCard } from './types';
 
 import theme from '../../../theme';
-import { setParagraphFontSize, setRadius, setSVGHoverColor, setTitleFontSize } from '../../../utils';
+import { setMargins, setParagraphFontSize, setRadius, setSVGHoverColor, setTitleFontSize } from '../../../utils';
 
 const { COLOR, BOX_SHADOW, TRANSITION } = theme;
 
@@ -62,16 +62,13 @@ export const OptionContainer = styled.div`
 `;
 
 export const StyledPriceCard = styled.div<IStyledPriceCard>`
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
   border-radius: ${setRadius('S')};
   box-shadow: ${BOX_SHADOW.CARD_3};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 525px;
-  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
-  margin-left: ${({ ml = 0 }) => `${ml}px`};
-  margin-right: ${({ mr = 0 }) => `${mr}px`};
-  margin-top: ${({ mt = 0 }) => `${mt}px`};
   padding: 35px 25px;
   transition: ${TRANSITION.MEDIUM};
   width: 255px;

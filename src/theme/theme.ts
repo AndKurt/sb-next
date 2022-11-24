@@ -195,6 +195,7 @@ const BUTTON_WIDTH = {
   buttonXXL: '210px',
   buttonRoundSmall: '89px',
   buttonRound: '120px',
+  buttonInput: '125px',
 };
 
 const BUTTON_HEIGHT = {

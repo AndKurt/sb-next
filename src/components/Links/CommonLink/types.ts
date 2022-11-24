@@ -16,8 +16,9 @@ export interface IStyledCommonLink {
 }
 
 export interface ICommonLink extends IStyledCommonLink {
-  href: string;
+  to: string;
   children: ReactNode;
   withArrow?: boolean;
-  isDisabled?: boolean;
+  // ** Internal or external link */
+  isInternalPath: boolean;
 }

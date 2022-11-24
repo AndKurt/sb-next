@@ -12,7 +12,7 @@ export type TitleSize =
   | 'semibold_7'
   | 'medium_7';
 
-export type ButtonWidth = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'auto';
+export type ButtonWidth = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'input' | 'auto';
 export type ButtonHeight = 'XS' | 'S' | 'M' | 'L' | 'auto';
 export type SvgSize = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'auto';
 

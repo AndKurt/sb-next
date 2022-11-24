@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IStyledServiceCard } from './types';
 
 import theme from '../../../theme';
-import { setParagraphFontSize, setRadius, setSvgSize, setTitleFontSize } from '../../../utils';
+import { setMargins, setParagraphFontSize, setRadius, setSvgSize, setTitleFontSize } from '../../../utils';
 
 const { COLOR, BOX_SHADOW, DEVICE } = theme;
 
@@ -42,16 +42,13 @@ export const StyledImgContainer = styled.div`
 `;
 
 export const StyledServiceCard = styled.div<IStyledServiceCard>`
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
   align-items: ${({ isCentering }) => (isCentering ? 'center' : 'flex-start')};
   border-radius: ${setRadius('S')};
   box-shadow: ${BOX_SHADOW.CARD_3};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
-  margin-left: ${({ ml = 0 }) => `${ml}px`};
-  margin-right: ${({ mr = 0 }) => `${mr}px`};
-  margin-top: ${({ mt = 0 }) => `${mt}px`};
   max-width: ${({ isLargeCard }) => (isLargeCard ? '540px' : '350px')};
   padding: ${({ isCentering, isLargeCard }) => {
       if (isCentering) {

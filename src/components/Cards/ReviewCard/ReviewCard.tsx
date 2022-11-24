@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import {
   StyledAvatar,
@@ -23,4 +23,4 @@ const ReviewCard: React.FC<IReviewCard> = ({ img, name, position, children }) =>
   </StyledReviewCard>
 );
 
-export default ReviewCard;
+export default memo(ReviewCard);

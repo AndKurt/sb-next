@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, memo } from 'react';
 
 import {
   CheckMark,
@@ -112,4 +112,4 @@ const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList, handleChose
   );
 };
 
-export default PriceCard;
+export default memo(PriceCard);

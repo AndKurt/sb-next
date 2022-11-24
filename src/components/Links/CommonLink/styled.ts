@@ -1,20 +1,45 @@
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 import { IStyledCommonLink } from './types';
 
 import theme from '../../../theme/theme';
-import { setTitleFontSize } from '../../../utils';
+import { setMargins, setTitleFontSize } from '../../../utils';
 
 const { COLOR, TRANSITION, SVG_COLORS } = theme;
 
 export const StyledCommonLink = styled.a<IStyledCommonLink>`
   ${({ textSize = 'semibold_7' }) => setTitleFontSize(textSize)};
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
   color: ${COLOR.PRIMARY};
   display: inline-block;
-  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
-  margin-left: ${({ ml = 0 }) => `${ml}px`};
-  margin-right: ${({ mr = 0 }) => `${mr}px`};
-  margin-top: ${({ mt = 0 }) => `${mt}px`};
+  text-decoration: none;
+  transition: ${TRANSITION.FAST};
+
+  img {
+    width: 14px;
+    height: 8px;
+    margin-left: 5px;
+    ${SVG_COLORS.PRIMARY};
+    transition: ${TRANSITION.FAST};
+  }
+
+  :hover,
+  :active {
+    color: ${COLOR.SECONDARY};
+
+    img {
+      ${SVG_COLORS.SECONDARY};
+    }
+  }
+`;
+
+export const StyledCommonInternalLink = styled(Link)<IStyledCommonLink>`
+  ${({ textSize = 'semibold_7' }) => setTitleFontSize(textSize)};
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
+  color: ${COLOR.PRIMARY};
+  display: inline-block;
   text-decoration: none;
   transition: ${TRANSITION.FAST};
 

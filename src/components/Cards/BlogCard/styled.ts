@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IStyledBlogCard } from './types';
 
 import theme from '../../../theme';
-import { setParagraphFontSize, setTitleFontSize } from '../../../utils';
+import { setMargins, setParagraphFontSize, setTitleFontSize } from '../../../utils';
 
 const { RADIUS, COLOR, DEVICE } = theme;
 
@@ -54,12 +54,9 @@ export const StyledInfoContainer = styled.div`
 `;
 
 export const StyledBlogCard = styled.div<IStyledBlogCard>`
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
   display: flex;
   flex-direction: column;
-  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
-  margin-left: ${({ ml = 0 }) => `${ml}px`};
-  margin-right: ${({ mr = 0 }) => `${mr}px`};
-  margin-top: ${({ mt = 0 }) => `${mt}px`};
   max-width: 350px;
   width: 100%;
 

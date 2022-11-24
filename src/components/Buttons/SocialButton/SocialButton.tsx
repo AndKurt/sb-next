@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { StyledSocialButton } from './styled';
 import { ISocialButton } from './types';
@@ -13,4 +13,4 @@ const SocialButton = ({ ml, mr, mt, mb, socialName }: ISocialButton) => {
     </StyledSocialButton>
   );
 };
-export default SocialButton;
+export default memo(SocialButton);

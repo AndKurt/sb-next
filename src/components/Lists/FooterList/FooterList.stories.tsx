@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import FooterList from './FooterList';
 
@@ -11,6 +12,7 @@ export const FooterListExample = Template.bind({});
 export default {
   title: 'Example/Lists/FooterList',
   component: FooterList,
+  decorators: [withRouter],
   parameters: {
     backgrounds: { default: 'dark' },
   },
@@ -24,7 +26,12 @@ export default {
     },
 
     items: {
-      defaultValue: ['Page', 'Elements', 'FAQ', 'Pricing', 'Site map'],
+      defaultValue: [
+        { to: '/', name: 'Page' },
+        { to: '/', name: 'Elements' },
+        { to: '/', name: 'FAQ' },
+        { to: '/', name: 'Pricing' },
+      ],
       control: {
         type: 'array',
       },

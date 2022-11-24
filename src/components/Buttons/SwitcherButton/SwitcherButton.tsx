@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
 import { StyledInputRadio, StyledSwitchItem, SwitchContainer } from './styled';
 import { ISwitcherButton, ISwitchItem } from './types';
@@ -25,4 +25,4 @@ const SwitcherButton: React.FC<ISwitcherButton> = ({ option1 = 'Monthly', option
   );
 };
 
-export default SwitcherButton;
+export default memo(SwitcherButton);

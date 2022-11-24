@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import CommonLink from './CommonLink';
 
@@ -11,13 +12,14 @@ export const CommonLinkWithArrow = Template.bind({});
 export default {
   title: 'Example/Links/CommonLinkWithArrow',
   component: CommonLink,
+  decorators: [withRouter],
 
   argTypes: {
     children: {
       defaultValue: 'Read more',
     },
 
-    href: {
+    to: {
       defaultValue: '/',
       control: {
         type: 'text',
@@ -46,7 +48,7 @@ export default {
       defaultValue: 0,
       control: { type: 'number' },
     },
-
+    isInternalPath: { control: 'boolean', defaultValue: false },
     withArrow: { control: 'boolean', defaultValue: true },
   },
 } as ComponentMeta<typeof CommonLink>;

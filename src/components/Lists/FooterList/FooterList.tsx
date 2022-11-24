@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-import { StyledFooterList, StyledItem, StyledList, StyledTitle } from './styled';
+import { StyledFooterList, StyledItem, StyledLink, StyledList, StyledTitle } from './styled';
 import { IFooterList } from './types';
 
-const FooterList: React.FC<IFooterList> = ({ title, items }) => (
-  <StyledFooterList>
+const FooterList: React.FC<IFooterList> = ({ title, items, mt, mr, mb, ml }) => (
+  <StyledFooterList mt={mt} mr={mr} mb={mb} ml={ml}>
     <StyledTitle>{title}</StyledTitle>
     <StyledList>
-      {items.map((item) => (
-        <StyledItem key={item}>{item}</StyledItem>
+      {items.map(({ to, name }) => (
+        <StyledItem key={name}>
+          <StyledLink to={to}>{name}</StyledLink>
+        </StyledItem>
       ))}
     </StyledList>
   </StyledFooterList>
 );
 
-export default FooterList;
+export default memo(FooterList);

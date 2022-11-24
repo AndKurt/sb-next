@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { StyledBlogCard, StyledDate, StyledImg, StyledInfoContainer, StyledParagraph, StyledTitle } from './styled';
 import { IBlogCard } from './types';
@@ -12,11 +12,11 @@ const BlogCard: React.FC<IBlogCard> = ({ date, img, title, linkHref, children })
       <StyledDate>{date}</StyledDate>
       <StyledTitle>{title}</StyledTitle>
       <StyledParagraph>{children}</StyledParagraph>
-      <CommonLink href={linkHref} withArrow>
+      <CommonLink to={linkHref} withArrow isInternalPath>
         Read more
       </CommonLink>
     </StyledInfoContainer>
   </StyledBlogCard>
 );
 
-export default BlogCard;
+export default memo(BlogCard);

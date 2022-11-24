@@ -19,11 +19,24 @@ export default {
     },
 
     mt: {
+      name: 'margin-top',
+      defaultValue: 0,
+      control: { type: 'number' },
+    },
+    mr: {
+      name: 'margin-right',
       defaultValue: 0,
       control: { type: 'number' },
     },
 
     mb: {
+      name: 'margin-bottom',
+      defaultValue: 0,
+      control: { type: 'number' },
+    },
+
+    ml: {
+      name: 'margin-left',
       defaultValue: 0,
       control: { type: 'number' },
     },

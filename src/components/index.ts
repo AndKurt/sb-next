@@ -16,3 +16,6 @@ export { default as PriceCard } from './Cards/PriceCard';
 
 // Lists
 export { default as FooterList } from './Lists/FooterList';
+
+// Inputs
+export { default as EmailInput } from './Iputs/EmailInput';

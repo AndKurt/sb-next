@@ -2,6 +2,14 @@ import { BackgroundColor, ButtonWidth, ButtonHeight, Radius, TitleSize, TextColo
 
 export interface IStyledCommonButton {
   /** Background color for button */
+  // ** Margin left */
+  ml?: number;
+  // ** Margin right */
+  mr?: number;
+  // ** Margin top */
+  mt?: number;
+  // ** Margin bottom */
+  mb?: number;
   bgColor?: BackgroundColor;
   textColor?: TextColor;
   radius?: Radius;
@@ -9,10 +17,6 @@ export interface IStyledCommonButton {
   height?: ButtonHeight;
   textSize?: TitleSize;
   padding?: number;
-  /** Margin top */
-  mt?: number;
-  /** Margin bottom */
-  mb?: number;
   isBorder?: boolean;
   isDisabled?: boolean;
   isShadow?: boolean;
@@ -24,5 +28,5 @@ export interface ICommonButton extends IStyledCommonButton {
   /** Button name */
   mediaIcon?: 'play' | 'pause';
   /** Action */
-  handleClick: () => void;
+  handleClick?: () => void;
 }

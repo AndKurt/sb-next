@@ -11,6 +11,7 @@ import {
   setHeightButtonSize,
   setHoverBackgroundButton,
   setHoverTextColor,
+  setMargins,
   setRadius,
   setSVGColor,
   setSVGDisabledColor,
@@ -23,12 +24,11 @@ import {
 const { TRANSITION, BOX_SHADOW, SVG_SIZE, DEVICE, SPACES } = theme;
 
 export const StyledCommonButton = styled.button<IStyledCommonButton>`
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
   ${({ textSize = 'bold_6' }) => setTitleFontSize(textSize)};
   align-items: center;
   background: ${({ bgColor }) => setBackgroundButton(bgColor)};
-
   border: ${({ isBorder = false, textColor }) => (isBorder ? `1px solid ${setTextColor(textColor)}` : 'none')};
-
   border-radius: ${({ radius }) => setRadius(radius)};
   box-shadow: ${({ isShadow }) => (isShadow ? `${BOX_SHADOW.BUTTON}` : 'none')};
   color: ${({ textColor }) => setTextColor(textColor)};
@@ -36,8 +36,6 @@ export const StyledCommonButton = styled.button<IStyledCommonButton>`
   display: flex;
   height: ${({ height }) => setHeightButtonSize(height)};
   justify-content: space-around;
-  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
-  margin-top: ${({ mt = 0 }) => `${mt}px`};
   padding: ${({ padding = 0 }) => `${padding}px`};
   transition: ${TRANSITION.FAST};
   width: ${({ width }) => setWidthButtonSize(width)};

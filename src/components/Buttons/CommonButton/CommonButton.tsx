@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { StyledCommonButton } from './styled';
 import { ICommonButton } from './types';
@@ -16,7 +16,9 @@ const CommonButton = ({
   handleClick,
   height,
   mt,
+  mr,
   mb,
+  ml,
   radius,
   width,
   padding,
@@ -30,7 +32,9 @@ const CommonButton = ({
     disabled={isDisabled}
     isShadow={isShadow}
     mt={mt}
+    mr={mr}
     mb={mb}
+    ml={ml}
     radius={radius}
     width={width}
     textSize={textSize}
@@ -43,4 +47,4 @@ const CommonButton = ({
   </StyledCommonButton>
 );
 
-export default CommonButton;
+export default memo(CommonButton);

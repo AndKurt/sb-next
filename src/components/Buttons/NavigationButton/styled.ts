@@ -1,14 +1,14 @@
-/* eslint-disable @typescript-eslint/indent */
 import styled from 'styled-components';
 
 import { IStyledNavigationButton } from './types';
 
 import theme from '../../../theme/theme';
-import { setDirection, setRadius, setSVGDisabledColor, setSVGHoverColor } from '../../../utils';
+import { setDirection, setMargins, setRadius, setSVGDisabledColor, setSVGHoverColor } from '../../../utils';
 
 const { TRANSITION, COLOR, BUTTON_WIDTH, BUTTON_HEIGHT, SVG_SIZE, DEVICE } = theme;
 
 export const StyledNavigationButton = styled.button<IStyledNavigationButton>`
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
   align-items: center;
   background: ${COLOR.TERTIARY};
   border: none;
@@ -17,8 +17,6 @@ export const StyledNavigationButton = styled.button<IStyledNavigationButton>`
   display: flex;
   height: ${BUTTON_HEIGHT.buttonL};
   justify-content: center;
-  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
-  margin-top: ${({ mt = 0 }) => `${mt}px`};
   transition: ${TRANSITION.FAST};
   width: ${BUTTON_WIDTH.buttonS};
 

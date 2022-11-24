@@ -15,6 +15,8 @@ export const setWidthButtonSize = (size: ButtonWidth = 'auto') => {
       return BUTTON_WIDTH.buttonL;
     case 'XL':
       return BUTTON_WIDTH.buttonXL;
+    case 'input':
+      return BUTTON_WIDTH.buttonInput;
     default:
       return 'auto';
   }

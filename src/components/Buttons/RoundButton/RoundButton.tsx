@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { StyledRoundButton, TextContent } from './styled';
 import { IRoundButton } from './types';
@@ -9,4 +9,4 @@ const RoundButton = ({ label, isDisbled = false, top, bottom, handleClick }: IRo
   </StyledRoundButton>
 );
 
-export default RoundButton;
+export default memo(RoundButton);

@@ -9,7 +9,12 @@ export interface IStyledFooterList {
   mb?: number;
 }
 
+interface IItem {
+  to: string,
+  name: string
+}
+
 export interface IFooterList extends IStyledFooterList {
   title: string;
-  items: string[];
+  items: IItem[];
 }

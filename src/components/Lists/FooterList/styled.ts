@@ -1,16 +1,15 @@
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 import { IStyledFooterList } from './types';
 
-import { setParagraphFontSize, setTextColor, setTitleFontSize } from '../../../utils';
+import { setMargins, setParagraphFontSize, setTextColor, setTitleFontSize } from '../../../utils';
 
 export const StyledFooterList = styled.div<IStyledFooterList>`
-  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
-  margin-left: ${({ ml = 0 }) => `${ml}px`};
-  margin-right: ${({ mr = 0 }) => `${mr}px`};
-  margin-top: ${({ mt = 0 }) => `${mt}px`};
+  ${({ mt, ml, mr, mb }) => setMargins(mt, mr, mb, ml)};
   max-width: 233px;
-  width: 100;
+  width: 100%;
 `;
 
 export const StyledTitle = styled.h3`
@@ -27,7 +26,11 @@ export const StyledList = styled.ul`
 `;
 
 export const StyledItem = styled.li`
-  color: ${setTextColor('GREY')};
-  ${setParagraphFontSize('regular_3')};
   list-style: none;
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${setTextColor('GREY')};
+  text-decoration: none;
+  ${setParagraphFontSize('regular_3')};
 `;
