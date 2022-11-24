@@ -2,33 +2,29 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import PriceCard from './PriceCard';
+import FooterList from './FooterList';
 
-const Template: ComponentStory<typeof PriceCard> = (args) => <PriceCard {...args} />;
+const Template: ComponentStory<typeof FooterList> = (args) => <FooterList {...args} />;
 
-export const PriceCardExample = Template.bind({});
+export const FooterListExample = Template.bind({});
 
 export default {
-  title: 'Example/Cards/PriceCard',
-  component: PriceCard,
+  title: 'Example/Lists/FooterList',
+  component: FooterList,
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
 
   argTypes: {
     title: {
-      defaultValue: 'Free trial',
+      defaultValue: 'Service',
       control: {
         type: 'text',
       },
     },
 
-    price: {
-      defaultValue: 'Custom',
-      control: {
-        type: 'text',
-      },
-    },
-
-    optionList: {
-      defaultValue: ['For small teams – 5 users', 'Community support'],
+    items: {
+      defaultValue: ['Page', 'Elements', 'FAQ', 'Pricing', 'Site map'],
       control: {
         type: 'array',
       },
@@ -57,4 +53,4 @@ export default {
       control: { type: 'number' },
     },
   },
-} as ComponentMeta<typeof PriceCard>;
+} as ComponentMeta<typeof FooterList>;

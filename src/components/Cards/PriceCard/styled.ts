@@ -68,6 +68,10 @@ export const StyledPriceCard = styled.div<IStyledPriceCard>`
   display: flex;
   flex-direction: column;
   height: 525px;
+  margin-bottom: ${({ mb = 0 }) => `${mb}px`};
+  margin-left: ${({ ml = 0 }) => `${ml}px`};
+  margin-right: ${({ mr = 0 }) => `${mr}px`};
+  margin-top: ${({ mt = 0 }) => `${mt}px`};
   padding: 35px 25px;
   transition: ${TRANSITION.MEDIUM};
   width: 255px;

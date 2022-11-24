@@ -25,7 +25,7 @@ const yearBtn: IBtnColors = {
   textColor: 'PRIMARY',
 };
 
-const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList, handleChosePlan }) => {
+const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList, handleChosePlan, mt, mr, mb, ml }) => {
   const [isHover, setIsHover] = useState(false);
   const [monthBtnColor, setMonthBtnColor] = useState<IBtnColors>(monthBtn);
   const [yearBtnColor, setYearBtnColor] = useState<IBtnColors>(yearBtn);
@@ -54,7 +54,14 @@ const PriceCard: React.FC<IPriceCard> = ({ title, price, optionList, handleChose
   };
 
   return (
-    <StyledPriceCard onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+    <StyledPriceCard
+      mt={mt}
+      mr={mr}
+      mb={mb}
+      ml={ml}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+    >
       <Title>{title}</Title>
       <PriceContainer>
         <Price>{typeof price === 'string' ? price : `$ ${price}`}</Price>

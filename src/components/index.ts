@@ -13,3 +13,6 @@ export { default as ServiceCard } from './Cards/ServiceCard';
 export { default as BlogCard } from './Cards/BlogCard';
 export { default as ReviewCard } from './Cards/ReviewCard';
 export { default as PriceCard } from './Cards/PriceCard';
+
+// Lists
+export { default as FooterList } from './Lists/FooterList';
